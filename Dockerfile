@@ -1,18 +1,18 @@
 # Dockerfile
 FROM python:3.8-slim
 
+# Set the working directory
 WORKDIR /app
 
 # Install dependencies
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-# Copy application files
-COPY app.py .
-COPY simple_code_review_model.pkl .
+# Copy all files from the current directory to the /app directory in the container
+COPY . .
 
-# Expose port for FastAPI
+# Expose FastAPI port
 EXPOSE 8000
 
-# Run FastAPI app with Uvicorn
+# Run FastAPI with Uvicorn
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
