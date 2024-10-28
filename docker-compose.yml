@@ -18,7 +18,7 @@ services:
   grafana:
     image: grafana/grafana
     ports:
-      - "3000:3000"  # Grafana will be accessible on this port
+      - "30001:3000"  # Grafana will be accessible on this port
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     depends_on:
