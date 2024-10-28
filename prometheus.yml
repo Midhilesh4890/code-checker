@@ -1,6 +1,6 @@
 # prometheus.yml
 global:
-  scrape_interval: 15s
+  scrape_interval: 15s  # How often to scrape metrics
 
 scrape_configs:
   - job_name: "fastapi"

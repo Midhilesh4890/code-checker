@@ -6,6 +6,9 @@ WORKDIR /app
 
 # Install dependencies
 COPY requirements.txt .
+COPY pyproject.toml .
+# RUN pip install uv
+# RUN uv add pyproject.toml
 RUN pip install -r requirements.txt
 
 # Copy all files from the current directory to the /app directory in the container
